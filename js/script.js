@@ -1,8 +1,8 @@
 "use strict";
 
-const { createApp } = Vue
+const { createApp } = Vue;
 
-const miaApp = createApp({
+createApp({
     data(){
         return {
             slides: [
@@ -32,16 +32,23 @@ const miaApp = createApp({
                     text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
                 }
             ],
-
+            
+            carouselIndex: 0,
+            interval: null
         }
-        
-        console.log(slides);
     },
+
     methods: {
+        carouselNext(){
+            if(this.carouselIndex < this.slides.length - 1){
+                this.carouselIndex++;
+            }
 
+        },
     },
-    mounted(){
 
+    mounted(){
+        this.startAutoplay()
     }
 }).mount('#app');
 
