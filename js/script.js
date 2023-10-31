@@ -43,8 +43,19 @@ createApp({
             if(this.carouselIndex < this.slides.length - 1){
                 this.carouselIndex++;
             }
-
+            else {
+                this.carouselIndex = 0;
+            }
         },
+        carouselPrev(){
+            if(this.carouselIndex > 0){
+                this.carouselIndex--;
+            }
+            else {
+                this.carouselIndex = this.slides.length - 1;
+            }
+        },
+
     },
 
     mounted(){
