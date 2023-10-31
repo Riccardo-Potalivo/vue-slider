@@ -47,6 +47,7 @@ createApp({
                 this.carouselIndex = 0;
             }
         },
+
         carouselPrev(){
             if(this.carouselIndex > 0){
                 this.carouselIndex--;
@@ -55,6 +56,10 @@ createApp({
                 this.carouselIndex = this.slides.length - 1;
             }
         },
+
+        selectSlide(i){
+            this.carouselIndex = i;
+        }
 
     },
 
